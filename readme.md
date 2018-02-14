@@ -22,6 +22,16 @@
 ###### corpus, you can compare the perplexities for an article appearing on CNN
 ###### vs. a few pages from Shakespeare. Comment on the differences in perplexity.
 
+#### N-Grams 
+* ["In the fields of computational linguistics and probability, an n-gram is a 
+contiguous sequence of n items from a given sample of text or speech. The items 
+can be phonemes, syllables, letters, words or base pairs according to the application.
+ The n-grams typically are collected from a text or speech corpus"](https://en.wikipedia.org/wiki/N-gram)
+
+
+#### how to use + generate random sentence
+
+
 
 #### NLTK IS AWESOME!!!
 * you can import the entire reuters corpus, without having to parse it all, simply:

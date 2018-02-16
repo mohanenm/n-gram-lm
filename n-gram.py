@@ -1,3 +1,5 @@
+
+ import collections
  import nltk
  from nltk.corpus import reuters
 
@@ -19,4 +21,10 @@ def collection_stats():
 with read(id) a:
       for words in p:
           corpus.append([format_sentence(words), 'corpus'])
+
+
+
+l = [corpus]
+
+collections.counter(l)
 

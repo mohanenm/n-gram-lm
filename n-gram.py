@@ -1,30 +1,17 @@
+import nltk
 
- import collections
- import nltk
- from nltk.corpus import reuters
-
-
+textData = open("sdata.txt").read()
+tokens = nltk.word_tokenize(textData)
+type(tokens)
 
 
 def format_sentence(sent):
-     return {word: True for word in nltk.word_tokenize(sent)}
+    return {word: True for word in nltk.word_tokenize(sent)}
 
 
-def collection_stats():
-    # List of documents
-    documents = reuters.fileids()
-    print(str(len(documents)) + " documents");
+seg = []
+with open("sdata.txt") as p:
+    for words in p:
+        seg.append([format_sentence(words), 'seg'])
 
-    id = category_docs[0]
-    words =
-
-with read(id) a:
-      for words in p:
-          corpus.append([format_sentence(words), 'corpus'])
-
-
-
-l = [corpus]
-
-collections.counter(l)
-
+print(seg)

@@ -20,7 +20,7 @@ with open("sdata.txt") as p:
 
 
 tokens = nltk.word_tokenize(textData)
-bigram = nltk.ngrams(tokens, 3)
+bigram = nltk.ngrams(tokens, 2)
 print(collections.Counter(bigram))
 
 

@@ -6,7 +6,6 @@ from nltk import ngrams
 from nltk import FreqDist
 import itertools
 
-
 ''
 'cleaning data'
 ''
@@ -30,10 +29,10 @@ Counter(trigram)
 
 wordcount = Counter(finalData.split())
 for item in wordcount.items():
-  print("{}\t{}".format( * item))
+    print("{}\t{}".format(*item))
 
 ''
-'total word count: 965433'
+'total word count: 963989'
 ''
 print(len(finalData.split()))
 
@@ -41,7 +40,8 @@ print(len(finalData.split()))
 'segmenting text'
 ''
 sent_tokenize_list = sent_tokenize(finalData)
-print(len(sent_tokenize_list))
-bigram = ngrams(sent_tokenize, 2)
+
+bigram = ngrams(sent_tokenize(finalData), 2)
+print(bigram)
 fdist = FreqDist(itertools.chain(bigram))
 print(fdist)

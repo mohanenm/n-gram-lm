@@ -5,7 +5,6 @@ from nltk import sent_tokenize, word_tokenize
 from nltk import ngrams
 from nltk import FreqDist
 import itertools
-
 ''
 'cleaning data'
 ''
@@ -14,29 +13,29 @@ fTwo = (re.sub('[0-9\W]+', " ", data))
 fThree = (fTwo.replace("SCENE", " "))
 fFour = (fThree.replace("ACT", " "))
 finalData = fFour
-''' 
-  tokenization + nltk bigram,trigram generation 
-
-'''
+''
+'tokenization + nltk bigram,trigram generation'
+''
 tokens = word_tokenize(finalData)
 wordcount = Counter(finalData.split())
 for item in wordcount.items():
    ("{}\t{}".format(*item))
 totalWordcount = sum(wordcount.values())
-''
-'total word count: 963989'
-''
+print(totalWordcount)
 ''
 ' sentence segmenting'
 ''
-sent_tokenize_list = sent_tokenize(finalData)
-print(sent_tokenize)
-bigram = list(nltk.bigrams(finalData.split()))
-print(*map(' '.join, bigram), sep=',')
-wordCounter = Counter(bigram)
-for k,v in wordCounter.items():
-    final = v/totalWordcount
 
-    print(final)
+sent_tokenize_list = sent_tokenize(finalData)
+token = sent_tokenize
+bigram = list(nltk.bigrams(finalData.split()))
+print(sep=',', *map(' '.join, bigram))
+wordCounter = Counter(bigram)
+for k, v in wordCounter.items():
+    count = k, (v/988559)
+
+    print(count)
+
+
 
 

@@ -31,12 +31,13 @@ for item in wordcount.items():
 ''
 'total word count: 963989'
 ''
-print(len(finalData.split()))
 ''
 ' sentence segmenting'
 ''
 sent_tokenize_list = sent_tokenize(finalData)
 print(sent_tokenize)
-bigram = ngrams(sent_tokenize(finalData), 2)
-fdist = FreqDist(itertools.chain(bigram))
-print(fdist)
+bigram = list(nltk.bigrams(finalData.split()))
+''' print(*map(' '.join, bigram), sep=',')'''
+
+print(len(bigram))
+

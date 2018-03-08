@@ -5,6 +5,7 @@ from nltk import sent_tokenize, word_tokenize
 from nltk import ngrams
 from nltk import FreqDist
 import itertools
+
 ''
 'cleaning data'
 ''
@@ -23,11 +24,11 @@ finalData = fFour
 tokens = word_tokenize(finalData)
 bigram = nltk.ngrams(tokens, 2)
 print(bigram)
-
+'''
 wordcount = Counter(finalData.split())
-for item in wordcount.items():
+for item in wordcount.items():gi
     print("{}\t{}".format(*item))
-
+'''
 ''
 'total word count: 963989'
 ''
@@ -38,6 +39,11 @@ sent_tokenize_list = sent_tokenize(finalData)
 print(sent_tokenize)
 bigram = list(nltk.bigrams(finalData.split()))
 ''' print(*map(' '.join, bigram), sep=',')'''
+wordCounter = Counter(bigram)
+for k,v in wordCounter.items():
+    final = v/963989
 
-print(len(bigram))
+    print(final)
+
+
 

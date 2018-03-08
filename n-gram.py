@@ -10,8 +10,7 @@ import itertools
 'cleaning data'
 ''
 data = open("sdata.txt", 'r').read()
-fOne = ''.join(filter(lambda x: not x.isdigit(), data))
-fTwo = (re.sub('[-,_[@#*""%;()}]', " ", fOne))
+fTwo = (re.sub('[0-9\W]+', " ", data))
 fThree = (fTwo.replace("SCENE", " "))
 fFour = (fThree.replace("ACT", " "))
 finalData = fFour
@@ -22,23 +21,25 @@ finalData = fFour
 '''
 
 tokens = word_tokenize(finalData)
-bigram = nltk.ngrams(tokens, 2)
-print(bigram)
-'''
+
 wordcount = Counter(finalData.split())
-for item in wordcount.items():gi
-    print("{}\t{}".format(*item))
-'''
+for item in wordcount.items():
+   ("{}\t{}".format(*item))
+
+for k,v in wordcount.items():
+    print(k, v)
+
 ''
 'total word count: 963989'
 ''
 ''
 ' sentence segmenting'
 ''
+'''
 sent_tokenize_list = sent_tokenize(finalData)
 print(sent_tokenize)
 bigram = list(nltk.bigrams(finalData.split()))
-''' print(*map(' '.join, bigram), sep=',')'''
+print(*map(' '.join, bigram), sep=',')
 wordCounter = Counter(bigram)
 for k,v in wordCounter.items():
     final = v/963989
@@ -46,4 +47,4 @@ for k,v in wordCounter.items():
     print(final)
 
 
-
+'''

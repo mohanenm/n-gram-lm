@@ -23,19 +23,22 @@ finalData = fFour
 ''
 
 tokens = word_tokenize(finalData)
-wordcount = Counter(finalData.split())
-for item in wordcount.items():
-  ("{}\t{}".format(*item))
-  totalWordcount = sum(wordcount.values())
+unigram = Counter(finalData.split())
+for item in unigram.items():
+  print("{}\t{}".format(*item))
 
 
+
+  '''totalWordcount = sum(unigram.values())'''
+
+'''
 sent_tokenize_list = sent_tokenize(finalData)
 token = sent_tokenize
 bigram = list(nltk.bigrams(finalData.split()))
 print(sep=',', *map(' '.join, bigram))
 wordCounter = Counter(bigram)
 for k, v in wordCounter.items():
-     print(k, (v/988559))
-
+    print(k, (v/988559))
+'''
 
 

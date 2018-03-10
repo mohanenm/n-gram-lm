@@ -21,7 +21,7 @@ for word in i_counter:
         r = random.random()
         counter_rand = .0
 
-        for word, freq in i_counter.items():
+        for word, freq in iter(i_counter.items()):
             counter_rand += freq
 
             if counter_rand > r:

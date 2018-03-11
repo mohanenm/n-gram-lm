@@ -10,8 +10,10 @@ fThree = (fTwo.replace("SCENE", " "))
 fFour = (fThree.replace("ACT", " "))
 final_data = fFour
 tokens = word_tokenize(final_data)
-i_counter = Counter(tokens)
-t_count = len(tokens)
+tokens_final =[item.lower() for item in tokens]
+i_counter = Counter(tokens_final)
+t_count = len(tokens_final)
+
 
 for word in i_counter:
     i_counter[word] /= float(t_count)
@@ -23,7 +25,7 @@ for word in i_counter:
 
 text_rand = []
 
-for _ in range(100):
+for _ in range(10):
         r = random.random()
         counter_rand = .0
 

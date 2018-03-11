@@ -37,7 +37,10 @@ for _ in range(10):
 
 print(' '.join(text_rand))
 
-print(reduce(mul, [i_counter[w] for w in text_rand], 1.0))
+print(reduce(mul, [i_counter[a] for a in text_rand], 1.0))
+
+
+# bi-gram generatioon + bi-gram
 
 bigram_sentence = nltk.ngrams(tokens_final, 2, pad_left=True, pad_right=True)
 
@@ -45,19 +48,35 @@ print(bigram_sentence)
 
 lm_model = defaultdict(lambda: defaultdict(lambda: 0))
 
-for w1, w2 in bigram_sentence:
-    lm_model[w1][w2] += 1
+for a1, a2 in bigram_sentence:
+    lm_model[a1][a2] += 1
 
 
 for w1 in lm_model:
     # was using int, but for now obvious reasons had to switch to float
-    t_count = float(sum(lm_model[w1].values()))
+    t_count = float(sum(lm_model[a1].values()))
     # actually getting probabilities, with bigrams
-    for w2 in lm_model[w1]:
-        lm_model[w1][w2] /= t_count
+    for a2 in lm_model[a1]:
+        lm_model[a1][a2] /= t_count
 
 # tests: passed
 print(lm_model["view"]["would"])
 print(lm_model["than"]["mathematical"])
 # test:passed
 print(lm_model[None]["aff"])
+
+sentence_finished = False
+
+while not sentence_finished:
+    r = random.random()
+    counter_counter = .0
+    for word in lm_model[tuple(text_rand[-1:])].keys():
+        counter_counter += lm_model[tuple(text_rand[-1:])][word]
+        if counter_counter >= r:
+            text_rand.append(word)
+            break
+    if text_rand[-1:] == [None]:
+        sentence_finished = True
+
+print(' '.join([text for text in text_rand if text]))
+

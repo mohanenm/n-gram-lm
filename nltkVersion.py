@@ -65,22 +65,31 @@ print(lm_model["than"]["mathematical"])
 # test:passed
 print(lm_model[None]["aff"])
 
+import random
 
-text_rand = [None]
+text = [None]
+prob = 1.0
+
 sentence_finished = False
 
 while not sentence_finished:
     r = random.random()
-    counter_counter = .0
-    for word in lm_model[tuple(text_rand[-1:])].keys():
-        counter_counter += lm_model[tuple(text_rand[-1:])][word]
-        if counter_counter >= r:
-            text_rand.append(word)
+    accumulator = .0
+
+    for word in lm_model[tuple(text[-1:])].keys():
+        accumulator += lm_model[tuple(text[-1:])][word]
+
+        if accumulator >= r:
+            prob *= lm_model[tuple(text[-1:])][
+                word]
+            text.append(word)
             break
-    if text_rand[-1:] == [None]:
+
+    if text[-2:] == [None, None]:
         sentence_finished = True
 
-print(' '.join([Nt for Nt in text_rand if Nt]))
+print("Probability of text=", prob)
+print(' '.join([text]))
 
 # tri-gram generatioon + tri-gram
 

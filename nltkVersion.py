@@ -13,10 +13,10 @@ fFour = (fThree.replace("ACT", " "))
 finalData = fFour
 '''
 
-tokens = word_tokenize(finalData)
-
-i_counter = Counter(finalData.words())
-t_count = len(finalData.words())
+final_data = open("sdata.txt").read()
+tokens = word_tokenize(final_data)
+i_counter = Counter(tokens)
+t_count = len(tokens)
 
 
 for word in i_counter:

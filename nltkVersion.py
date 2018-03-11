@@ -65,21 +65,22 @@ print(lm_model["than"]["mathematical"])
 # test:passed
 print(lm_model[None]["aff"])
 
+
+text_rand = [None]
 sentence_finished = False
 
 while not sentence_finished:
     r = random.random()
     counter_counter = .0
-    for word in lm_model[tuple(text_rand[-2:])].keys():
-        counter_counter += lm_model[tuple(text_rand[-2:])][word]
+    for word in lm_model[tuple(text_rand[-1:])].keys():
+        counter_counter += lm_model[tuple(text_rand[-1:])][word]
         if counter_counter >= r:
             text_rand.append(word)
             break
-    if text_rand[-2:] == [None]:
+    if text_rand[-1:] == [None]:
         sentence_finished = True
 
-print(' '.join([text for text in text_rand if text]))
-
+print(' '.join([Nt for Nt in text_rand if Nt]))
 
 # tri-gram generatioon + tri-gram
 

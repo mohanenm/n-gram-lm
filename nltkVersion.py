@@ -3,7 +3,7 @@ from nltk import word_tokenize, sent_tokenize
 from nltk import bigrams, trigrams
 from collections import Counter, defaultdict
 from operator import mul
-
+import random
 import re
 
 data = open("westPhil.txt", 'r').read()
@@ -20,7 +20,6 @@ for word in i_counter:
     i_counter[word] /= float(t_count)
     print(sum(i_counter.values()))
 
-    import random
     from functools import reduce
 
 text_rand = []
@@ -62,34 +61,43 @@ for a1 in lm_model:
 # tests: passed
 print(lm_model["view"]["would"])
 print(lm_model["than"]["mathematical"])
-# test:passed
+# test:passed:0, naturally
 print(lm_model[None]["aff"])
-
-import random
 
 text = [None]
 prob = 1.0
-
-sentence_finished = False
+sentence_finished = not True
 
 while not sentence_finished:
     r = random.random()
-    accumulator = .0
-
+    counter_rand2 = .0
     for word in lm_model[tuple(text[-1:])].keys():
-        accumulator += lm_model[tuple(text[-1:])][word]
-
-        if accumulator >= r:
+        counter_rand2 += lm_model[tuple(text[-1:])][word]
+        if counter_rand2 >= r:
             prob *= lm_model[tuple(text[-1:])][
                 word]
             text.append(word)
             break
-
-    if text[-2:] == [None, None]:
-        sentence_finished = True
+    if text[-1:] == [None, None]:
+        sentence_finished = not False
 
 print("Probability of text=", prob)
-print(' '.join([text]))
+print(' '.join([t for t in text if t]))
 
-# tri-gram generatioon + tri-gram
+# six-gram generatioon + tri-gram
+
+sixgram_sentence = nltk.ngrams(tokens_final, 6, pad_left=True, pad_right=True)
+print(sixgram_sentence)
+
+
+lm_six_model = defaultdict(lambda: defaultdict(lambda: 0))
+for b1, b2, b3, b4, b5, b6  in sixgram_sentence:
+    lm_six_model[b1][b2][b3][b4][b5][b6] += 1
+
+for b1 in lm_six_model:
+    t_count = float(sum(lm_model[a1].values()))
+    # actually getting probabilities, with bigrams
+    for a2 in lm_model[a1]:
+        lm_model[a1][a2] /= t_count
+
 

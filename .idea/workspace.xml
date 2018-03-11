@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86aae310-ce23-4f73-8fa9-63a9f0262caf" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/nltkVersion.py" afterPath="$PROJECT_DIR$/nltkVersion.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,9 +42,11 @@
       <file leaf-file-name="nltkVersion.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nltkVersion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="142">
+              <caret line="60" column="30" lean-forward="true" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="westernPhil.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/westernPhil.txt">
+      <file leaf-file-name="westPhil.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/westPhil.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76037">
-              <caret line="29228" column="2" lean-forward="false" selection-start-line="29228" selection-start-column="2" selection-end-line="29228" selection-end-column="2" />
+              <caret line="29228" column="2" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29228" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -142,10 +145,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="306" />
+    <option name="x" value="239" />
     <option name="y" value="33" />
-    <option name="width" value="1098" />
-    <option name="height" value="807" />
+    <option name="width" value="1165" />
+    <option name="height" value="432" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -269,10 +272,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="306" y="33" width="1098" height="807" extended-state="0" />
+    <frame x="239" y="33" width="1165" height="432" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18276516" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17186108" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881865" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -281,7 +284,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272472" sideWeight="0.49715215" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34" sideWeight="0.72009766" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33707866" sideWeight="0.73349434" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.305638" sideWeight="0.73349434" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -675,10 +678,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/westernPhil.txt">
+    <entry file="file://$PROJECT_DIR$/westPhil.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76037">
-          <caret line="29228" column="2" lean-forward="false" selection-start-line="29228" selection-start-column="2" selection-end-line="29228" selection-end-column="2" />
+          <caret line="29228" column="2" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29228" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -703,9 +706,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nltkVersion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="142">
+          <caret line="60" column="30" lean-forward="true" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

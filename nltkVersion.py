@@ -4,20 +4,14 @@ from collections import Counter, defaultdict
 
 
 import re
-
-'''
 data = open("sdata.txt", 'r').read()
 fTwo = (re.sub('[0-9\W]+', " ", data))
 fThree = (fTwo.replace("SCENE", " "))
 fFour = (fThree.replace("ACT", " "))
-finalData = fFour
-'''
-
-final_data = open("sdata.txt").read()
+final_data = fFour
 tokens = word_tokenize(final_data)
 i_counter = Counter(tokens)
 t_count = len(tokens)
-
 
 for word in i_counter:
     i_counter[word] /= float(t_count)
@@ -25,6 +19,7 @@ for word in i_counter:
     print(sum(i_counter.values()))
 
     import random
+    from functools import reduce
 
 text_rand = []
 
@@ -43,4 +38,4 @@ print(' '.join(text_rand))
 
 
 from operator import mul
-print(reduce(mul, [counts[w] for w in text], 1.0))
+print(reduce(mul, [i_counter[w] for w in text_rand], 1.0))

@@ -9,6 +9,8 @@ from nltk import ngrams
 from nltk import FreqDist
 import itertools
 
+# this pythonic version is not complete, would love some guidance!
+
 sentenceStart = "<s>"
 sentenceEnd = "</S>"
 

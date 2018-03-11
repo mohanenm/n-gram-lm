@@ -6,6 +6,8 @@ from operator import mul
 import random
 import re
 
+# ideas for dictionary, bag of words ==> actual model came from http://nlpforhackers.io/language-models/ + nltk documentation(excessively)
+
 data = open("westPhil.txt", 'r').read()
 fTwo = (re.sub(',[0-9\W]+', " ", data))
 fThree = (fTwo.replace("SCENE", " "))
@@ -36,7 +38,7 @@ for _ in range(10):
 
 print(' '.join(text_rand))
 
-print(reduce(mul, [i_counter[w] for w in text_rand], 1.0))
+print(reduce(mul, [i_counter[a] for a in text_rand], 1.0))
 
 
 # bi-gram generatioon + bi-gram
@@ -47,16 +49,15 @@ print(bigram_sentence)
 print(trigram_sentence)
 lm_model = defaultdict(lambda: defaultdict(lambda: 0))
 
-for w1, w2 in bigram_sentence:
-    lm_model[w1][w2] += 1
+for a1, a2 in bigram_sentence:
+    lm_model[a1][a2] += 1
 
-
-for w1 in lm_model:
+for a1 in lm_model:
     # was using int, but for now obvious reasons had to switch to float
-    t_count = float(sum(lm_model[w1].values()))
+    t_count = float(sum(lm_model[a1].values()))
     # actually getting probabilities, with bigrams
-    for w2 in lm_model[w1]:
-        lm_model[w1][w2] /= t_count
+    for a2 in lm_model[a1]:
+        lm_model[a1][a2] /= t_count
 
 # tests: passed
 print(lm_model["view"]["would"])
@@ -95,18 +96,18 @@ print(' '.join([t for t in text if t]))
 
 model = defaultdict(lambda: defaultdict(lambda: 0))
 
-for w1, w2, w3 in trigram_sentence:
-        model[(w1, w2)][w3] += 1
+for a1, a2, a3 in trigram_sentence:
+        model[(a1, a2)][a3] += 1
 
 print(model["according", "to"]["this"])
 print(model["what", "the"]["nonexistingword"])
 print(model[None, None]["The"])
 
 
-for w1_w2 in model:
-    total_count = float(sum(model[w1_w2].values()))
-    for w3 in model[w1_w2]:
-        model[w1_w2][w3] /= total_count
+for a1_a2 in model:
+    total_count = float(sum(model[a1_a2].values()))
+    for a3 in model[a1_a2]:
+        model[a1_a2][a3] /= total_count
 
 text = [None, None]
 
@@ -114,13 +115,12 @@ sentence_finished = False
 
 while not sentence_finished:
     r = random.random()
-    accumulator = .0
+    tri_counter = .0
     for word in model[tuple(text[-2:])].keys():
-        accumulator += model[tuple(text[-2:])][word]
-        if accumulator >= r:
+        tri_counter += model[tuple(text[-2:])][word]
+        if tri_counter >= r:
             text.append(word)
             break
-
     if text[-2:] == [None, None]:
         sentence_finished = True
 

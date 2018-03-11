@@ -7,6 +7,8 @@ from nltk.collocations import *
 from nltk.probability import *
 import sets
 
+# this set utilizing version is not done
+
 bigram_measures = nltk.collocations.BigramAssocMeasures()
 trigram_measures = nltk.collocations.TrigramAssocMeasures()
 text = open('sdata.txt').read()

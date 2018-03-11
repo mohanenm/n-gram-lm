@@ -48,15 +48,16 @@ lm_model = defaultdict(lambda: defaultdict(lambda: 0))
 for w1, w2 in bigram_sentence:
     lm_model[w1][w2] += 1
 
-print(lm_model['it']["is"])
-'''test'''
-print(lm_model["it"]["isubv"])
 
 for w1 in lm_model:
-    t_count = int(sum(lm_model[w1].values()))
-    for w3 in lm_model[w1]:
+    # was using int, but for now obvious reasons had to switch to float
+    t_count = float(sum(lm_model[w1].values()))
+    # actually getting probabilities, with bigrams
+    for w2 in lm_model[w1]:
         lm_model[w1][w2] /= t_count
 
-print(lm_model['it']["is"])
-print(lm_model["it"]["isubv"])
-print(lm_model[None, None]["The"])
+# tests: passed
+print(lm_model["view"]["would"])
+print(lm_model["than"]["mathematical"])
+# test:passed
+print(lm_model[None]["aff"])

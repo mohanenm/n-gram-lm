@@ -36,27 +36,27 @@ for _ in range(10):
 
 print(' '.join(text_rand))
 
-print(reduce(mul, [i_counter[a] for a in text_rand], 1.0))
+print(reduce(mul, [i_counter[w] for w in text_rand], 1.0))
 
 
 # bi-gram generatioon + bi-gram
 
 bigram_sentence = nltk.ngrams(tokens_final, 2, pad_left=True, pad_right=True)
-
+trigram_sentence = nltk.ngrams(tokens_final, 3, pad_left=True, pad_right=True)
 print(bigram_sentence)
-
+print(trigram_sentence)
 lm_model = defaultdict(lambda: defaultdict(lambda: 0))
 
-for a1, a2 in bigram_sentence:
-    lm_model[a1][a2] += 1
+for w1, w2 in bigram_sentence:
+    lm_model[w1][w2] += 1
 
 
-for a1 in lm_model:
+for w1 in lm_model:
     # was using int, but for now obvious reasons had to switch to float
-    t_count = float(sum(lm_model[a1].values()))
+    t_count = float(sum(lm_model[w1].values()))
     # actually getting probabilities, with bigrams
-    for a2 in lm_model[a1]:
-        lm_model[a1][a2] /= t_count
+    for w2 in lm_model[w1]:
+        lm_model[w1][w2] /= t_count
 
 # tests: passed
 print(lm_model["view"]["would"])
@@ -64,28 +64,76 @@ print(lm_model["than"]["mathematical"])
 # test:passed:0, naturally
 print(lm_model[None]["aff"])
 
-text = [None]
+
+text = [None, None]
 prob = 1.0
-sentence_finished = not True
+sentence_finished = False
 
 while not sentence_finished:
     r = random.random()
     counter_rand2 = .0
-    for word in lm_model[tuple(text[-1:])].keys():
-        counter_rand2 += lm_model[tuple(text[-1:])][word]
+    for word in lm_model[tuple(text[-2:])].keys():
+        counter_rand2 += lm_model[tuple(text[-2:])][word]
         if counter_rand2 >= r:
-            prob *= lm_model[tuple(text[-1:])][
-                word]
+            prob *= lm_model[tuple(text[-2:])][word]
+            print(prob)
             text.append(word)
             break
-    if text[-1:] == [None, None]:
-        sentence_finished = not False
+    if text[-2:] == [None, None]:
+        sentence_finished = True
 
 print("Probability of text=", prob)
 print(' '.join([t for t in text if t]))
 
-# six-gram generatioon + tri-gram
 
+
+
+
+
+
+
+
+model = defaultdict(lambda: defaultdict(lambda: 0))
+
+for w1, w2, w3 in trigram_sentence:
+        model[(w1, w2)][w3] += 1
+
+print(model["according", "to"]["this"])
+print(model["what", "the"]["nonexistingword"])
+print(model[None, None]["The"])
+
+
+for w1_w2 in model:
+    total_count = float(sum(model[w1_w2].values()))
+    for w3 in model[w1_w2]:
+        model[w1_w2][w3] /= total_count
+
+text = [None, None]
+
+sentence_finished = False
+
+while not sentence_finished:
+    r = random.random()
+    accumulator = .0
+    for word in model[tuple(text[-2:])].keys():
+        accumulator += model[tuple(text[-2:])][word]
+        if accumulator >= r:
+            text.append(word)
+            break
+
+    if text[-2:] == [None, None]:
+        sentence_finished = True
+
+print(' '.join([t for t in text if t]))
+
+
+
+
+
+
+'''
+
+# six-gram generatioon + tri-gram
 sixgram_sentence = nltk.ngrams(tokens_final, 6, pad_left=True, pad_right=True)
 print(sixgram_sentence)
 
@@ -99,5 +147,6 @@ for b1 in lm_six_model:
     # actually getting probabilities, with bigrams
     for a2 in lm_model[a1]:
         lm_model[a1][a2] /= t_count
+'''
 
 

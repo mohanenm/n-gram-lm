@@ -52,7 +52,7 @@ for a1, a2 in bigram_sentence:
     lm_model[a1][a2] += 1
 
 
-for w1 in lm_model:
+for a1 in lm_model:
     # was using int, but for now obvious reasons had to switch to float
     t_count = float(sum(lm_model[a1].values()))
     # actually getting probabilities, with bigrams
@@ -70,13 +70,16 @@ sentence_finished = False
 while not sentence_finished:
     r = random.random()
     counter_counter = .0
-    for word in lm_model[tuple(text_rand[-1:])].keys():
-        counter_counter += lm_model[tuple(text_rand[-1:])][word]
+    for word in lm_model[tuple(text_rand[-2:])].keys():
+        counter_counter += lm_model[tuple(text_rand[-2:])][word]
         if counter_counter >= r:
             text_rand.append(word)
             break
-    if text_rand[-1:] == [None]:
+    if text_rand[-2:] == [None]:
         sentence_finished = True
 
 print(' '.join([text for text in text_rand if text]))
+
+
+# tri-gram generatioon + tri-gram
 

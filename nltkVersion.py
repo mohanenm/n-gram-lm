@@ -1,30 +1,46 @@
-
-from nltk.corpus import reuters
+from nltk import word_tokenize
 from nltk import bigrams, trigrams
 from collections import Counter, defaultdict
 
-i_counter = Counter(reuters.words())
-t_count = len(reuters.words())
 
-print(i_counter.most_common(n=10))
+import re
+
+'''
+data = open("sdata.txt", 'r').read()
+fTwo = (re.sub('[0-9\W]+', " ", data))
+fThree = (fTwo.replace("SCENE", " "))
+fFour = (fThree.replace("ACT", " "))
+finalData = fFour
+'''
+
+tokens = word_tokenize(finalData)
+
+i_counter = Counter(finalData.words())
+t_count = len(finalData.words())
+
 
 for word in i_counter:
-    i_counter[word]/= int(t_count)
+    i_counter[word] /= float(t_count)
 
     print(sum(i_counter.values()))
 
     import random
 
-    text_rand = []
+text_rand = []
 
-    for _ in range(100):
+for _ in range(100):
         r = random.random()
         counter_rand = .0
 
-        for word, freq in iter(i_counter):
+        for word, freq in (i_counter.items()):
             counter_rand += freq
 
             if counter_rand > r:
                 text_rand.append(word)
                 break
+
 print(' '.join(text_rand))
+
+
+from operator import mul
+print(reduce(mul, [counts[w] for w in text], 1.0))

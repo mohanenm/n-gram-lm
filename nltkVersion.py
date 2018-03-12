@@ -9,7 +9,7 @@ import re
 # ideas for dictionary, bag of words ==> actual model came from http://nlpforhackers.io/language-models/ + nltk documentation(excessively)
 
 data = open("westPhil.txt", 'r').read()
-fTwo = (re.sub(',[0-9\W]+', " ", data))
+fTwo = (re.sub('[0-9\W]+', " ", data))
 fThree = (fTwo.replace("SCENE", " "))
 fFour = (fThree.replace("ACT", " "))
 final_data = fFour
@@ -25,7 +25,7 @@ for word in i_counter:
     from functools import reduce
 
 text_rand = []
-for _ in range(10):
+for _ in range(100):
     r = random.random()
     counter_rand = .0
 
@@ -48,20 +48,19 @@ trigram_sentence = nltk.ngrams(tokens_final, 3, pad_left=True, pad_right=True)
 print(bigram_sentence)
 print(trigram_sentence)
 lm_model = defaultdict(lambda: defaultdict(lambda: 0))
-
 for a1, a2 in bigram_sentence:
     lm_model[a1][a2] += 1
-
 for a1 in lm_model:
     # was using int, but for now obvious reasons had to switch to float
     t_count = float(sum(lm_model[a1].values()))
     # actually getting probabilities, with bigrams
     for a2 in lm_model[a1]:
-        lm_model[a1][a2] /= t_count
-
+      lm_model[a1][a2] /= t_count
 # tests: passed
 print(lm_model["view"]["would"])
-print(lm_model["than"]["mathematical"])
+print(lm_model["is"]["approach"])
+# malformed sentence
+print(lm_model["buenos"]["dias"])
 # test:passed:0, naturally
 print(lm_model[None]["aff"])
 
@@ -73,20 +72,17 @@ sentence_finished = False
 while not sentence_finished:
     r = random.random()
     counter_rand2 = .0
-    for word in lm_model[tuple(text[-2:])].keys():
-        counter_rand2 += lm_model[tuple(text[-2:])][word]
+    for word in lm_model[tuple(text[-1:])].keys():
+        counter_rand2 += lm_model[tuple(text[-1:])][word]
         if counter_rand2 >= r:
-            prob *= lm_model[tuple(text[-2:])][word]
+            prob *= lm_model[tuple(text[-1:])][word]
             print(prob)
             text.append(word)
             break
-    if text[-2:] == [None, None]:
+    if text[-1:] == [None, None]:
         sentence_finished = True
-
 print("Probability of text=", prob)
 print(' '.join([t for t in text if t]))
-
-
 
 
 
@@ -99,7 +95,7 @@ model = defaultdict(lambda: defaultdict(lambda: 0))
 for a1, a2, a3 in trigram_sentence:
         model[(a1, a2)][a3] += 1
 
-print(model["according", "to"]["this"])
+print(model["its", "is"][""])
 print(model["what", "the"]["nonexistingword"])
 print(model[None, None]["The"])
 

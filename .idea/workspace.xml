@@ -18,7 +18,7 @@
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="615">
+              <first_editor relative-caret-position="0">
                 <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
                 <folding />
               </first_editor>
@@ -30,7 +30,7 @@
       <file leaf-file-name="n-gram.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/n-gram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="15">
               <caret line="11" column="66" lean-forward="false" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -42,7 +42,7 @@
       <file leaf-file-name="nltkVersion.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nltkVersion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="-1803">
               <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -64,18 +64,8 @@
       <file leaf-file-name="westPhil.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/westPhil.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369270">
+            <state relative-caret-position="304">
               <caret line="24618" column="64" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="24620" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="westernPhil.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/westernPhil.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -648,7 +638,7 @@
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="615">
+          <first_editor relative-caret-position="0">
             <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
             <folding />
           </first_editor>
@@ -683,28 +673,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/westPhil.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369270">
-          <caret line="24618" column="64" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="24620" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/n-gram.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="11" column="66" lean-forward="false" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -719,9 +691,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/westPhil.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="24618" column="64" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="24620" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/n-gram.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="11" column="66" lean-forward="false" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nltkVersion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="-1803">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />

@@ -23,7 +23,6 @@ for word in i_counter:
     print(sum(i_counter.values()))
 
     from functools import reduce
-
 text_rand = []
 for _ in range(100):
     r = random.random()

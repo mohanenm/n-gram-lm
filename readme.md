@@ -5,7 +5,6 @@
 
 
 ### Goals
-#### From HW assignment in Comp 388 @loyolachicagocode
 ###### 1. Tokenize and sentence-segment corpus. This can be done by either
 ###### writing regular expressions or using => [NLTK](http://www.nltk.org).
 ###### 2. Compute a smoothed language model. It should at least use one previous
